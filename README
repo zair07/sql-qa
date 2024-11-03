@@ -1,0 +1,38 @@
+# Project Nexla Natural Language to Sql Query
+
+## Setup and Installation
+
+Follow these steps to set up and run the project:
+
+1. Create a virtual environment:
+   ```
+   python -m venv venv
+   ```
+
+2. Activate the virtual environment:
+   - On Windows:
+     ```
+     venv\Scripts\activate
+     ```
+   - On macOS and Linux:
+     ```
+     source venv/bin/activate
+     ```
+
+3. Install the required packages:
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. Run the main Jupyter notebook:
+   ```
+   jupyter notebook main.ipynb
+   ```
+
+## Usage
+
+Open the `main.ipynb` notebook in Jupyter and follow the instructions within the notebook to run the project.
+
+## Additional Information
+
+Add any additional information, dependencies, or instructions here.

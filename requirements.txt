@@ -1,0 +1,6 @@
+mysql-connector-python
+openai
+pydantic
+langchain
+langchain-openai
+fastapi[standard]
