@@ -1,16 +1,26 @@
 import os
+from time import time
 
 from dotenv import load_dotenv
 from fastapi import FastAPI
+
+from config import Settings, setup_langsmith
+from db import get_result
 from llm import get_model
 
 load_dotenv()
 
 app = FastAPI()
-open_api_key = os.getenv('OPENAI_API_KEY')
-wso_llm = get_model(open_api_key)
+settings = Settings()
+wso_llm = get_model(settings.openai_key)
+# setup_langsmith(settings)
 
 @app.get("/")
 async def read_query(q: str):
-    ai_msg = wso_llm.invoke("who is the biggest contributer?")
-    return {"query": ai_msg.sql_query}
+    now = time()
+    ai_msg = wso_llm.invoke(q)
+    result = get_result(settings, ai_msg.sql_query)
+    return {
+        "result": result,
+        "latency": time() - now
+    }

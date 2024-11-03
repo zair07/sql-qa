@@ -1,6 +1,7 @@
 mysql-connector-python
 openai
 pydantic
+pydantic-settings
 langchain
 langchain-openai
 fastapi[standard]
